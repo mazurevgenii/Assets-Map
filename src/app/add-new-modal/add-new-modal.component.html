@@ -1,0 +1,57 @@
+<div class="card">
+  <h6 class="card-header">Add new asset</h6>
+  <div class="card-body">
+
+    <form class="needs-validation" [formGroup]="form" (ngSubmit)="submit()">
+      <div class="form-group row">
+        <label for="name" class="col-sm-3 col-form-label">Name</label>
+        <div class="col-sm-9 input-group">
+          <input type="text" class="form-control" id="name" formControlName="name">
+          <div *ngIf="form.get('name').touched && form.get('name').invalid" class="invalid-feedback">
+            <span *ngIf="form.get('name').errors.required">Please provide name.</span>
+          </div>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="latitude" class="col-sm-3 col-form-label">Latitude</label>
+        <div class="col-sm-9 input-group">
+          <input type="text" class="form-control" id="latitude" formControlName="latitude">
+          <div *ngIf="form.get('latitude').touched && form.get('latitude').invalid" class="invalid-feedback">
+            <span *ngIf="form.get('latitude').errors.required">Please provide latitude.</span>
+            <span *ngIf="form.get('latitude').errors.min || form.get('latitude').errors.max">Latitude must be between -90 and 90</span>
+            <span *ngIf="form.get('latitude').errors.pattern">Please provide correct latitude.</span>
+          </div>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="longitude" class="col-sm-3 col-form-label">Longitude</label>
+        <div class="col-sm-9 input-group">
+          <input type="text" class="form-control" id="longitude" formControlName="longitude">
+          <div *ngIf="form.get('longitude').touched && form.get('longitude').invalid" class="invalid-feedback">
+            <span *ngIf="form.get('longitude').errors.required">Please provide latitude.</span>
+            <span *ngIf="form.get('longitude').errors.min || form.get('longitude').errors.max">Longitude must be between -180 and 180</span>
+            <span *ngIf="form.get('longitude').errors.pattern">Please provide correct longitude.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="row justify-content-end">
+        <button
+          type="button"
+          class="btn btn-warning btn-sm"
+          data-dismiss="modal"
+          (click)="activeModal.dismiss('Close click')"
+        >Cancel
+        </button>
+        <button
+          type="submit"
+          class="btn btn-success btn-sm"
+          [disabled]="form.invalid"
+          (click)="submit(); activeModal.close()"
+        >Add
+        </button>
+      </div>
+
+    </form>
+  </div>
+</div>

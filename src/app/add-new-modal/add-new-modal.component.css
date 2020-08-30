@@ -1,0 +1,30 @@
+.modal-content {
+  width: 360px;
+}
+
+.card-header {
+  align-items: center;
+}
+
+.card-body {
+  padding: .75rem;
+}
+
+.col-sm-3 {
+  padding-right: 0;
+}
+
+.btn-sm {
+  margin-right: 1.25rem;
+  color: white;
+  padding: .1rem 1.25rem;
+  font-size: 1.1rem;
+}
+
+.form-group {
+  margin-bottom: .75rem;
+}
+
+.invalid-feedback {
+  display: block;
+}

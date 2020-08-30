@@ -1,0 +1,20 @@
+<div class="card">
+  <h6 class="card-header">Warning</h6>
+  <div class="card-body">
+    <p>Are you sure you want to delete {{truck.name}}?</p>
+    <div class="row justify-content-end">
+      <button
+        type="button"
+        class="btn btn-warning btn-sm"
+        (click)="activeModal.dismiss('dismiss click')"
+      >Cancel
+      </button>
+      <button
+        type="button"
+        class="btn btn-danger btn-sm"
+        (click)="activeModal.close('closed'); remove.emit(truck.id)"
+      >Delete
+      </button>
+    </div>
+  </div>
+</div>

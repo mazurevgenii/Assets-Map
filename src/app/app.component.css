@@ -1,0 +1,16 @@
+.row {
+  margin-top: 1rem;
+}
+
+.title {
+  height: 38px;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .col {
+    min-width: 100%;
+    max-width: 100%;
+    margin: .5rem auto;
+  }
+}

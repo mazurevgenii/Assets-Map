@@ -1,0 +1,57 @@
+.close-button {
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  width: 34px;
+  height: 34px;
+  cursor: pointer;
+  border: none;
+  opacity: .7;
+  background: #f6f6f6;
+  transition: opacity .1s linear;
+  transform: translate(0%, -50%);
+}
+
+.close-button:hover {
+  opacity: 1;
+  background: #c1c1c1;
+}
+
+.close-button:before, .close-button:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 34px;
+  height: 2px;
+  background-color: #b02851;
+}
+
+.close-button:before {
+  transform: rotate(45deg);
+}
+
+.close-button:after {
+  transform: rotate(-45deg);
+}
+
+.card-body {
+  padding: 0;
+  height: 500px;
+  overflow-y: scroll;
+}
+
+.row {
+  align-items: center;
+  margin: 0;
+  padding: .75rem 2rem;
+}
+
+.input-group>.form-control:not(:last-child) {
+  border-radius: .25rem;
+  margin-right: 1rem;
+}
+
+.list-group-item {
+  padding: 0;
+}

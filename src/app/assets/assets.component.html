@@ -1,0 +1,34 @@
+<div class="input-group mb-3">
+  <input
+    type="text"
+    class="form-control"
+    placeholder="Search asset..."
+    aria-label="Sizing example input"
+    aria-describedby="inputGroup-sizing-default"
+    [(ngModel)]="searchStr">
+  <button
+    type="button"
+    class="btn btn-success"
+    (click)="openAddNewModal()"
+  >Add asset
+  </button>
+</div>
+
+<div class="card border-dark">
+  <h6 class="card-header">Assets</h6>
+  <div class="card-body">
+
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-action"
+          *ngFor="let truck of this.assetServices.trucks | sortByName | searchTrucks: searchStr">
+        <div class="row" (click)="showTruckOnMap(truck)">
+          <div class="mr-auto">
+            <span>{{ truck.name }}</span>
+          </div>
+        </div>
+        <button class="close-button" (click)="openDeleteModel(truck)"></button>
+      </li>
+    </ul>
+
+  </div>
+</div>
